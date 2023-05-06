@@ -2,15 +2,18 @@ import pygame
 from variable import *
 from window import *
 from boule import *
+from circle import *
 
 pygame.init()
-
+boules = []
 window = Window()
-boule = Boule(4, 15, window, 10)
-
+circle = Circle(window)
+for i in range(10):
+    boules.append(Boule(10, 5, window, 10,circle, x_decal=i))
 while True:
-    boule.afficher()
-
+    for boule in boules:
+        boule.afficher()
+    circle.afficher()
 
 
 
